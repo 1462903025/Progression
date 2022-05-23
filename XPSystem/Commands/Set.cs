@@ -10,33 +10,33 @@ namespace XPSystem
         public static Set Instance { get; } = new Set();
         public string Command => "set";
         public string[] Aliases => Array.Empty<string>();
-        public string Description => $"Set a certain value in player's lvl variable.";
+        public string Description => $"在玩家的lvl变量中设置特定值。";
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             if (!sender.CheckPermission("xps.set"))
             {
-                response = "You don't have permission (xps.set) to use this command.";
+                response = "您没有使用此命令的权限（xps.set）。";
                 return false;
             }
             if (arguments.Count != 2)
             {
-                response = "Usage : XPSystem set (UserId | in-game id) (int amount)";
+                response = "用法 : XPSystem set (UserId | in-game id) (int amount)";
                 return false;
             }
             PlayerLog log;
             if (!Main.Players.TryGetValue(arguments.At(0), out log))
             {
-                response = "incorrect userid";
+                response = "用户ID不正确";
                 return false;
             }
             if (int.TryParse(arguments.At(1), out int lvl) && lvl > 0)
             {
                 log.LVL = lvl;
-                response = $"{arguments.At(0)}'s LVL is now {log.LVL}";
+                response = $"{arguments.At(0)}'现在LVL是 {log.LVL}";
                 log.ApplyRank();
                 return true;
             }
-            response = $"Invalid amount of LVLs : {lvl}";
+            response = $"LVL amount 无效 : {lvl}";
             return false;
         }
     }

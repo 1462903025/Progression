@@ -12,7 +12,7 @@ namespace XPSystem
 
         public override string[] Aliases => new string[] { "xps" };
 
-        public override string Description => "Manipulates with players' XP and LVL values.";
+        public override string Description => "操纵玩家的XP和LVL值。";
 
         public override void LoadGeneratedCommands()
         {
@@ -23,7 +23,7 @@ namespace XPSystem
 
         protected override bool ExecuteParent(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            response = "Use: .xps (leaderboard | set | get)";
+            response = "用法: .xps (leaderboard | set | get)";
             return false;
         }
     }

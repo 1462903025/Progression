@@ -13,13 +13,13 @@ namespace XPSystem
 
         public string[] Aliases => new string[] { "lb" };
 
-        public string Description => "Players, sorted by their LV (Level of Violence). Use: XPSystem leaderboard (amount)";
+        public string Description => "按LV排序的玩家 (暴力程度). 用法: XPSystem leaderboard (amount)";
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             if (!sender.CheckPermission("xps.get"))
             {
-                response = "You don't have permission (xps.get) to use this command.";
+                response = "您没有使用此命令的权限（xps.get）。";
                 return false;
             }
             if (arguments.Count == 0)
@@ -34,7 +34,7 @@ namespace XPSystem
                     response = GetTopPlayers(amount);
                     return true;
                 }
-                response = "Invalid players amount.";
+                response = "无效的玩家 amount ";
                 return false;
             }
         }
