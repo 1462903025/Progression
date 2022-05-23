@@ -2,6 +2,7 @@
  A basic, customisable XP and LVL system for SCP: SL.
 ## Config
 ```
+# ![img]
 x_p_system:
   is_enabled: true
   # Hint shown to the players if they have DNT enabled.
