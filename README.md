@@ -1,8 +1,8 @@
 # XPSystem
  A basic, customisable XP and LVL system for SCP: SL.
+# ![img](https://img.shields.io/github/downloads/1462903025/Progression/total?color=blue)
 ## Config
 ```
-# ![img]
 x_p_system:
   is_enabled: true
   # Hint shown to the players if they have DNT enabled.
